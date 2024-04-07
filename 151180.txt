@@ -1,0 +1,112 @@
+1.
+2.
+3.Најава на github и креирав репозиториум со даденото име 
+
+4. Отворив gitbush и ги искористив командиве
+$ mkdir SI_2024_lab1_151180
+$ cd SI_2024_lab1_151180
+$ git init
+
+5.Го поврзав локалниот репозиториум со оддалечениот
+$ git remote add origin https://github.com/StefaniAleksoska/SI_2024_lab1_151180.git
+
+6.Додадено е Readme и commit
+$ touch README.md
+$ nano README.md
+$ git add README.md
+$ git commit -m "Initial commit."
+$ git push origin master
+
+
+7.Прво ги креирав 3те линкови и ги додадов во локалниот репозиториум
+$ git add SILab1Main.java SILab1_1.java SILab1_2.java
+$ git commit -m "Add starter code."
+
+
+8.$ git push origin master
+
+9.Отворив две гранки
+$ git checkout master
+$ git branch bug1
+$ git branch bug2
+
+10. $ git checkout bug1
+
+11.После влез во bug1 ја поправив измената во SILab1_1.java кога влегов со nano
+$ nano SILab1_1.java
+$  git commit -a -m "Fix wrong condition in filterOddLengthStrings."
+
+12.$ git checkout bug2
+
+13.После влез во bug2 ја поправив измената во SILab1_2.java кога влегов со nano
+$ nano SILab1_2.java
+$ git commit -a -m " Fix wrong condition in makeBigStringFrom."
+
+14.$ git checkout bug1
+
+15.После влез во bug1 со nano  направив измена во SILab1Main.java и додадов повик до статичкиот метод.
+$ nano SILab1Main.java
+$ git commit -a -m "Call method filterOddLengthStrings in main class."
+
+16.$ git checkout bug2
+
+17.После влез во bug2 со nano  направив измена во SILab1Main.java и додадов повик до статичкиот метод.
+$ nano SILab1Main.java
+$ git commit -a -m "Call method makeBigStringFrom in main class."
+
+18.---$ git checkout bug1
+---$ git merge origin/bug1
+---$ git checkout master
+---$ git checkout bug2
+---$ git merge origin/bug2
+$ git pull origin master
+$ git push --all
+
+19.$ git checkout master
+
+20.Ја споив bug1  со мастер со 
+$ git merge bug1
+Updating ef0d539..fb150bd
+Fast-forward
+ SILab1Main.java | 3 ++-
+ SILab1_1.java   | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+$ git pull origin bug1
+$ git pull origin master
+
+
+
+
+21.$ git push --all
+
+22.$ git checkout bug2
+
+23. $ git rebase master
+$ git rebase --continue
+$ git add SILab1Main.java
+$ git rebase --continue
+$ git rebase --continue
+
+24.$ git checkout master
+
+
+25.$ git merge bug2
+Updating 32dba54..21bfd6d
+Fast-forward
+ SILab1Main.java | 4 ++++
+ SILab1_2.java   | 4 ++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+
+26.$ git pull origin master
+$ git fetch origin master
+$ git push origin master
+
+28.git log > log.txt
+$ git add log.txt
+$ nano 151180.txt
+$ git add --all 
+$ git commit -m "Final commit"
+
+29.git push --all
+
